@@ -1,6 +1,4 @@
 class Movie < ApplicationRecord
-  resources :movies
-  validates :title, :overview, presence: true
-  validates :title, uniqueness: true
-  has_many :bookmarks, dependence: destroy
+  validates :title, :overview, presence: true, uniqueness: true
+  has_many :bookmarks, dependent: :destroy
 end
